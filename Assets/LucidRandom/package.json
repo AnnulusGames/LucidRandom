@@ -1,0 +1,16 @@
+{
+    "name": "com.annulusgames.lucid-random",
+    "displayName": "Lucid Random",
+    "version": "1.0.0",
+    "unity": "2020.1",
+    "license": "MIT",
+    "author": {
+        "name": "Annulus Games",
+        "url": "https://github.com/AnnulusGames"
+    },
+    "type": "tool",
+    "description": "Enhanced random number generator for Unity",
+    "dependencies": {
+
+    }
+}

@@ -1,0 +1,18 @@
+{
+    "name": "AnnulusGames.LucidRandom.Editor",
+    "rootNamespace": "",
+    "references": [
+        "GUID:e1d3385c100e04087a9c227ae944498e"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
