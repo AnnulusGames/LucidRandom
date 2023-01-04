@@ -13,7 +13,7 @@ Lucid Random extends Unity's Random class, adding more features such as reproduc
 ### Features
 * LucidRandom class based on UnityEngine.Random and adding many functions
 * Struct that handles minimum and maximum values
-* WeightedList class to handle weighted lists
+* WeightedList class to handle weighted elements
 
 ## Setup
 
@@ -51,7 +51,7 @@ You can use it in the same way as the Unity.Random class.
 // get a random value from 0.0f to 10.0f
 float value = LucidRandom.Range(0f, 10f);
 
-// get random color
+// get a random color
 Color color = LucidRandom.ColorHSV();
 ```
 
