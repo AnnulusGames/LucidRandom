@@ -21,9 +21,14 @@ namespace AnnulusGames.LucidTools.RandomKit
             Rect rect = EditorGUI.PrefixLabel(position, label);
             rect.width *= 0.5f;
 
+            int indent = EditorGUI.indentLevel;
+            EditorGUI.indentLevel = 0;
+
             EditorGUI.PropertyField(rect, minProperty, emptyLabel);
             rect.x += rect.width;
             EditorGUI.PropertyField(rect, maxProperty, emptyLabel);
+
+            EditorGUI.indentLevel = indent;
 
             EditorGUI.EndProperty();
         }
