@@ -46,7 +46,8 @@ namespace AnnulusGames.LucidTools.RandomKit
             Rect rect = EditorGUI.PrefixLabel(position, label);
 
             EditorGUI.PropertyField(rect, minProperty, emptyLabel);
-            rect.y += EditorGUI.GetPropertyHeight(minProperty);
+            // rect.y += EditorGUI.GetPropertyHeight(minProperty);
+            rect.y += EditorGUIUtility.singleLineHeight;
             EditorGUI.PropertyField(rect, maxProperty, emptyLabel);
 
             EditorGUI.EndProperty();
@@ -54,8 +55,8 @@ namespace AnnulusGames.LucidTools.RandomKit
 
         public override float GetPropertyHeight(SerializedProperty property, GUIContent label)
         {
-            return EditorGUI.GetPropertyHeight(property.FindPropertyRelative(MIN_NAME)) +
-                EditorGUI.GetPropertyHeight(property.FindPropertyRelative(MAX_NAME));
+            // return EditorGUI.GetPropertyHeight(property.FindPropertyRelative(MIN_NAME)) + EditorGUI.GetPropertyHeight(property.FindPropertyRelative(MAX_NAME));
+            return EditorGUIUtility.singleLineHeight * 2;
         }
     }
 
