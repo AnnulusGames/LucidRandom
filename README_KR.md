@@ -38,14 +38,14 @@ or open Packages/manifest.json and add the following to the dependencies block.
 ```
 
 ### Namespace
-When using Lucid Random, add the following line at the beginning of the file.
+Lucid Random을 사용하는 경우 파일 시작 부분에 다음 줄을 추가합니다.
 
 ```cs
 using AnnulusGames.LucidTools.RandomKit;
 ```
 
 ## Basic Usage
-You can use it in the same way as the Unity.Random class.
+Unity.Random 클래스와 동일하게 사용할 수 있습니다.
 
 ```cs
 // get a random value from 0.0f to 10.0f
@@ -64,7 +64,7 @@ LucidRandom.InitState(seed);
 ```
 
 
-Use valueBool to get a random bool value, 
+임의의 부울 값을 얻으려면 valueBool을 사용하십시오.
 
 ```cs
 // return true or false randomly
@@ -74,7 +74,7 @@ if (LucidRandom.valueBool)
 }
 ```
 
-Vector2 and Vector3 can also be specified as Range arguments.
+임의의 Vector2 및 Vector3 범위도 지정할 수 있습니다.
 
 ```cs
 // returns a random Vector2 from (0, 0) to (1, 1)
@@ -84,7 +84,7 @@ Vector2 vector2 = LucidRandom.Range(Vector2.zero, Vector2.one);
 Vector3 vector3 = LucidRandom.Range(Vector3.zero, Vector3.one);
 ```
 
-You can also use onUnitCube, insideUnitSquare, etc.
+onUnitCube, insideUnitSquare 등을 사용할 수도 있습니다.
 
 ```cs
 // get a random coordinate on the unit cube
@@ -94,27 +94,27 @@ Vector3 p1 = LucidRandom.onUnitCube;
 Vector2 p2 = LucidRandom.insideUnitSquare;
 ```
 
-Use GetChance to perform probabilistic calculations, 
+GetChance를 사용하여 확률 계산을 수행할 수 있습니다
 
 ```cs
-// returns true with a probability of 15%
+// 15%의 확률로 반환합니다
 if (LucidRandom.GetChance(0.15f))
 {
     Debug.Log("Lucky!");
 }
 ```
 
-Use RollDice to roll the dice, 
+RollDice를 사용하여 주사위를 굴릴 수 있습니다, 
 
 ```cs
-// get the result when rolling a 6-sided dice
+// 6면체 주사위를 굴려서 나온 결과값
 int valueD6 = LucidRandom.RollDice(DiceType.D6);
 
-// get the sum of the results when rolling two 10-sided dice
+// 10면체 주사위를 굴려서 나온 결과값
 int value2D10 = LucidRandom.RollDice(2, DiceType.D10);
 ```
 
-Use RandomElement to get a random element of an array or list, 
+RandomElement를 사용하여 배열 또는 리스트의 임의 요소를 가져옵니다, 
 
 ```cs
 int[] array = { 1, 2, 3, 4, 5, 6 };
@@ -125,14 +125,14 @@ int a = LucidRandom.RandomElement(array);
 int b = LucidRandom.RandomElement(1, 2, 3, 4, 5, 6);
 ```
 
-Use Shuffle to randomly change the order of an array or list,
+Shuffle을 이용하여 array나 list를 섞습니다,
 ```cs
 int[] array = { 1, 2, 3, 4, 5, 6 };
 // shuffle order
 array = LucidRandom.Shuffle(array).ToArray();
 ```
 
-Use RandomColor to get a random color from the gradient.
+RandomColor를 이용하여 gradient에서 랜덤값을 가져옵니다.
 
 ```cs
 Color color = LucidRandom.RandomColor(gradient);
@@ -140,7 +140,7 @@ Color color = LucidRandom.RandomColor(gradient);
 
 ## Extension Methods
 
-RandomElement, Shuffle, and RandomColor are provided as extension methods.
+확장 메소드로 RandomElement, Shuffle, RandomColor 제공.
 
 ```cs
 // get a random element of the array
@@ -156,8 +156,8 @@ Color color = gradient.RandomColor();
 
 ## Random Generator
 
-Unity's Random class cannot be instantiated, so it is not suitable for generating reproducible random numbers.
-With Lucid Random, you can easily reproduce random numbers by using the RandomGenerator class.
+Unity의 Random 클래스는 인스턴스화할 수 없으므로 재현 가능한 난수를 생성하는 데 적합하지 않습니다.
+Lucid Random에서는 RandomGenerator 클래스를 사용하여 난수를 쉽게 재현할 수 있습니다.
 
 ```cs
 int seed = 0;
@@ -170,7 +170,7 @@ float value2 = rand.value;
 float value3 = rand.value;
 ```
 
-You can also register and acquire RandomGenerator by using AddGenerator and GetGenerator. This is useful when you want to use the same random number in multiple classes.
+AddGenerator 및 GetGenerator를 사용하여 RandomGenerator를 등록하고 획득할 수도 있습니다. 이는 여러 클래스에서 동일한 난수를 사용하려는 경우에 유용합니다.
 
 ```cs
 int seed = 0;
@@ -185,7 +185,7 @@ float value3 = LucidRandom.GetGenerator("Key").value;
 
 ## MinMaxValue
 
-Lucid Random defines a structure that handles minimum and maximum values.
+Lucid Random을  최소값과 최대값을 처리하는 구조를 정의합니다.
 
 ```cs
 // float with minimum 0 and maximum 100
@@ -214,11 +214,11 @@ MinMaxFloat mmFloat = new MinMaxFloat(0f, 100f);
 float value = LucidRandom.Range(mmFloat);
 ```
 
-Also, these value can be edited from the Inspector.
+또한 이 값은 Inspector에서 편집할 수 있습니다.
 
 <img src="https://github.com/AnnulusGames/LucidRandom/blob/main/Assets/LucidRandom/Documentation~/img1.png" width="500">
 
-Supported types are as follows.
+지원하는 타입은 아래와 같습니다.
 * int
 * float
 * Vector2
@@ -228,9 +228,9 @@ Supported types are as follows.
 
 ## WeightedList
 
-When using random numbers in a game, you may want to get random numbers with some weight rather than a constant probability. With Lucid Random, you can easily implement a weighted list by using WeightedList.
+게임에서 임의의 숫자를 사용할 때 일정한 확률보다는 가중치가 있는 임의의 숫자를 얻고 싶을 수 있습니다. Lucid Random을 사용하면 WeightedList를 사용하여 쉽게 가중치 목록을 구현할 수 있습니다.
 
-WeightedList can be used like a normal List.
+WeightedList는 일반 목록처럼 사용할 수 있습니다.
 
 ```cs
 WeightedList<string> weightedList = new WeightedList<string>();
@@ -247,7 +247,7 @@ weightedList.Remove("Hello!");
 weightedList.RemoveAt(0);
 ```
 
-If you want to give weight to the element, specify it when adding the element or change the weight value of the element. If not specified, weight is set to 1.
+요소에 가중치를 주고 싶다면 요소를 추가할 때 지정하거나 요소의 가중치 값을 변경하면 됩니다. 지정하지 않으면 가중치가 1로 설정됩니다.
 
 ```cs
 WeightedList<string> weightedList = new WeightedList<string>();
@@ -267,7 +267,7 @@ weightedList["Uncommon"] = 35f;
 string rarity = weightedList.RandomElement();
 ```
 
-WeightedList treats added elements as WeightedListItem. WeightedListItem holds two values, a value and a weight.
+WeightedList는 추가된 요소를 WeightedListItem으로 취급합니다. WeightedListItem은 값과 가중치라는 두 가지 값을 보유합니다.
 
 
 ```cs
@@ -277,7 +277,7 @@ WeightedListItem<string> item = new WeightedListItem<string>("Value", 10f);
 weightesList.Add(item);
 ```
 
-Also, WeightedList can be edited from the Inspector.
+또한 WeightedList는 Inspector에서 편집할 수 있습니다.
 
 <img src="https://github.com/AnnulusGames/LucidRandom/blob/main/Assets/LucidRandom/Documentation~/img2.png" width="500">
 
