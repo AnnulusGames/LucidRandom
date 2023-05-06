@@ -48,18 +48,6 @@ namespace AnnulusGames.LucidTools.RandomKit
             }
         }
 
-        public float this[T key]
-        {
-            get
-            {
-                return list[IndexOf(key)].weight;
-            }
-            set
-            {
-                list[IndexOf(key)].weight = value;
-            }
-        }
-
         public int Count
         {
             get
