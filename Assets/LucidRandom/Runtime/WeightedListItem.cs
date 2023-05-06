@@ -6,10 +6,10 @@ using UnityEngine;
 namespace AnnulusGames.LucidTools.RandomKit
 {
     [Serializable]
-    public class WeightedListItem<T>
+    public struct WeightedListItem<T>
     {
         public T value;
-        public float weight = 1f;
+        public float weight;
 
         public WeightedListItem(T value, float weight)
         {
