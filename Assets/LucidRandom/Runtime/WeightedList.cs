@@ -120,11 +120,11 @@ namespace AnnulusGames.LucidTools.RandomKit
 
         public bool Contains(T item)
         {
-            return list.Count(x =>
+            return list.Any(x =>
             {
                 if (x.value is IEquatable<T>) ((IEquatable<T>)x.value).Equals(item);
                 return x.value.Equals(item);
-            }) > 0;
+            });
         }
 
         public bool Contains(WeightedListItem<T> item)
