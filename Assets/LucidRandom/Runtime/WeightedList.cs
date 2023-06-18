@@ -98,6 +98,11 @@ namespace AnnulusGames.LucidTools.RandomKit
             list.RemoveAt(index);
         }
 
+        public int RemoveAll(Predicate<WeightedListItem<T>> match)
+        {
+            return list.RemoveAll(match);
+        }
+
         public void Insert(int index, T item)
         {
             list.Insert(index, new WeightedListItem<T>(item, 1f));
