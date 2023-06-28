@@ -31,6 +31,12 @@ namespace AnnulusGames.LucidTools.RandomKit
             return dictionary[key];
         }
 
+        public static Random.State state
+        {
+            get => instance.state;
+            set => instance.state = value;
+        }
+
         public static void InitState(int seed)
         {
             instance.InitState(seed);

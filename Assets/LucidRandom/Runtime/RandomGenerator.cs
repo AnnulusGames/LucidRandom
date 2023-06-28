@@ -7,7 +7,13 @@ namespace AnnulusGames.LucidTools.RandomKit
 {
     public class RandomGenerator
     {
-        private Random.State state;
+        private Random.State _state;
+
+        public Random.State state
+        {
+            get => _state;
+            set => _state = value;
+        }
 
         public RandomGenerator(int seed)
         {
@@ -18,16 +24,16 @@ namespace AnnulusGames.LucidTools.RandomKit
         {
             var prevState = Random.state;
             Random.InitState(seed);
-            state = Random.state;
+            _state = Random.state;
             Random.state = prevState;
         }
 
         public float Range(float min, float max)
         {
             var prevState = Random.state;
-            Random.state = state;
+            Random.state = _state;
             float result = Random.Range(min, max);
-            state = Random.state;
+            _state = Random.state;
             Random.state = prevState;
 
             return result;
@@ -36,9 +42,9 @@ namespace AnnulusGames.LucidTools.RandomKit
         public int Range(int min, int max)
         {
             var prevState = Random.state;
-            Random.state = state;
+            Random.state = _state;
             int result = Random.Range(min, max);
-            state = Random.state;
+            _state = Random.state;
             Random.state = prevState;
 
             return result;
@@ -134,9 +140,9 @@ namespace AnnulusGames.LucidTools.RandomKit
         public Color ColorHSV(float hueMin, float hueMax, float saturationMin, float saturationMax, float valueMin, float valueMax, float alphaMin, float alphaMax)
         {
             var prevState = Random.state;
-            Random.state = state;
+            Random.state = _state;
             Color result = Random.ColorHSV(hueMin, hueMax, saturationMin, saturationMax, valueMin, valueMax, alphaMin, alphaMax);
-            state = Random.state;
+            _state = Random.state;
             Random.state = prevState;
 
             return result;
@@ -147,9 +153,9 @@ namespace AnnulusGames.LucidTools.RandomKit
             get
             {
                 var prevState = Random.state;
-                Random.state = state;
+                Random.state = _state;
                 float result = Random.value;
-                state = Random.state;
+                _state = Random.state;
                 Random.state = prevState;
 
                 return result;
@@ -169,9 +175,9 @@ namespace AnnulusGames.LucidTools.RandomKit
             get
             {
                 var prevState = Random.state;
-                Random.state = state;
+                Random.state = _state;
                 Vector2 result = Random.insideUnitCircle;
-                state = Random.state;
+                _state = Random.state;
                 Random.state = prevState;
 
                 return result;
@@ -183,9 +189,9 @@ namespace AnnulusGames.LucidTools.RandomKit
             get
             {
                 var prevState = Random.state;
-                Random.state = state;
+                Random.state = _state;
                 Vector3 result = Random.insideUnitSphere;
-                state = Random.state;
+                _state = Random.state;
                 Random.state = prevState;
 
                 return result;
@@ -213,9 +219,9 @@ namespace AnnulusGames.LucidTools.RandomKit
             get
             {
                 var prevState = Random.state;
-                Random.state = state;
+                Random.state = _state;
                 Vector3 result = Random.onUnitSphere;
-                state = Random.state;
+                _state = Random.state;
                 Random.state = prevState;
 
                 return result;
@@ -269,9 +275,9 @@ namespace AnnulusGames.LucidTools.RandomKit
             get
             {
                 var prevState = Random.state;
-                Random.state = state;
+                Random.state = _state;
                 Quaternion result = Random.rotation;
-                state = Random.state;
+                _state = Random.state;
                 Random.state = prevState;
 
                 return result;
@@ -283,9 +289,9 @@ namespace AnnulusGames.LucidTools.RandomKit
             get
             {
                 var prevState = Random.state;
-                Random.state = state;
+                Random.state = _state;
                 Quaternion result = Random.rotationUniform;
-                state = Random.state;
+                _state = Random.state;
                 Random.state = prevState;
 
                 return result;
