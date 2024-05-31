@@ -4,5 +4,9 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/com.kevincastejon.missingfeatures/Samples/MissingAttributesSamples/Scene/TestSceneAttribute.unity
+    guid: 97ad2cd09b9af054cb6f731089a39158
   m_configObjects: {}
+  m_UseUCBPForAssetBundles: 0
