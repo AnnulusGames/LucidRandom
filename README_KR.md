@@ -7,6 +7,9 @@ Enhanced random number generator for Unity
 
 [日本語版README](README_JP.md)
 
+> [!IMPORTANT]
+> 이 저장소는 아카이브되었습니다. [Random Extensions](https://github.com/AnnulusGames/RandomExtensions)로의 마이그레이션을 고려하십시오.
+
 ## Overview
 Lucid Random extends Unity's Random class, adding more features such as reproducible random numbers and weighted list.
 
