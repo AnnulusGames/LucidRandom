@@ -79,7 +79,7 @@ namespace AnnulusGames.LucidTools.RandomKit
         }
         public bool Equals(MinMaxFloat other)
         {
-            return other.minValue == minValue && other.maxValue == maxValue;
+            return Mathf.Approximately(other.minValue, minValue) && Mathf.Approximately(other.maxValue, maxValue);
         }
         public override int GetHashCode()
         {
